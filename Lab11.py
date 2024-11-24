@@ -55,9 +55,9 @@ def assignment_statistics():
                 grade = content.split(f"|{assignment_id}|")[1][:2]
                 grades.append(int(grade))
     if grades:
-        average_grade = round(sum(grades) / len(grades))
+        average_grade = sum(grades) / len(grades)
         print(f"Min: {min(grades)}%")
-        print(f"Avg: {average_grade}%")
+        print(f"Avg: {average_grade:.1f}%")
         print(f"Max: {max(grades)}%")
     else:
         print(f"No grades found for {assignment_name}")
