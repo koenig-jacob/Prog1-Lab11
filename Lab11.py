@@ -26,7 +26,7 @@ def student_grade():
                     for i in range(1, len(lines), 3):
                         if assignment_id == lines[i].strip():
                             assignment_weight = float(lines[i + 1].strip())
-                            total_points += (assignment_grade) / 100) * int(assignment_weight)
+                            total_points += ((assignment_grade) / 100) * int(assignment_weight)
                             break
     
     percent_grade = round(total_points / 10)
