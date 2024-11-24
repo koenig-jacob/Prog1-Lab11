@@ -20,13 +20,13 @@ def student_grade():
                 f.seek(4)
                 assignment_id = f.read(5).decode().strip()
                 f.seek(-2, 2)
-                assignment_grade = f.read(2).decode().strip()
+                assignment_grade = int(f.read(2).decode().strip())
                 with open('data/assignments.txt', 'r') as weights_file:
                     lines = weights_file.readlines()
                     for i in range(1, len(lines), 3):
                         if assignment_id == lines[i].strip():
-                            assignment_weight = lines[i + 1].strip()
-                            total_points += (int(assignment_grade) / 100) * int(assignment_weight)
+                            assignment_weight = float(lines[i + 1].strip())
+                            total_points += (assignment_grade) / 100) * int(assignment_weight)
                             break
     
     percent_grade = round(total_points / 10)
