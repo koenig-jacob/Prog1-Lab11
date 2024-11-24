@@ -30,7 +30,6 @@ def student_grade():
                             break
     
     percent_grade = round(total_points / 10)
-    print(f"Total points: {total_points}")
     print(f"{percent_grade}%")
 
 def assignment_statistics():
@@ -92,7 +91,7 @@ def main():
     print("1. Student grade")
     print("2. Assignment statistics")
     print("3. Assignment graph\n")
-    choice = input("Enter choice: ")
+    choice = input("Enter your selection: ")
     if choice == "1":
         student_grade()
     elif choice == "2":
