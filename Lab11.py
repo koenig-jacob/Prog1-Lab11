@@ -19,6 +19,9 @@ def student_grade():
             if f.read(3).decode() == student_id:
                 f.seek(4)
                 assignment_id = f.read(5).decode().strip()
+                if not assignment_id.isdigit():  # Handle 4-digit IDs
+                    f.seek(4)
+                    assignment_id = f.read(4).decode().strip()
                 f.seek(-2, 2)
                 assignment_grade = int(f.read(2).decode().strip())
                 with open('data/assignments.txt', 'r') as weights_file:
